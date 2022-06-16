@@ -7,14 +7,15 @@
     "ts-types": "tsc --emitDeclarationOnly --outDir dist",
     "build": "rimraf dist && node ./esbuild/build.mjs && pnpm run ts-types",
     "dev": "node ./esbuild/server.js"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chokidar": "^3.5.3",
+    "css-tree": "^2.1.0",
     "esbuild": "^0.14.44",
+    "esbuild-css-modules-plugin": "^2.3.1",
     "esbuild-node-externals": "^1.4.1",
     "live-server": "^1.2.2",
     "rimraf": "^3.0.2",

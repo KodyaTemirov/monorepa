@@ -2291,9 +2291,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React3 = require_react();
+          var React4 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3694,7 +3694,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React3.Children.forEach(props.children, function(child) {
+                  React4.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -9892,9 +9892,9 @@
           }
           function getSuspenseInstanceFallbackErrorDetails(instance) {
             var dataset = instance.nextSibling && instance.nextSibling.dataset;
-            var digest, message, stack;
+            var digest2, message, stack;
             if (dataset) {
-              digest = dataset.dgst;
+              digest2 = dataset.dgst;
               {
                 message = dataset.msg;
                 stack = dataset.stck;
@@ -9903,7 +9903,7 @@
             {
               return {
                 message,
-                digest,
+                digest: digest2,
                 stack
               };
             }
@@ -11820,7 +11820,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React3.Component().refs;
+          var emptyRefsObject = new React4.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -15235,12 +15235,12 @@
               digest: null
             };
           }
-          function createCapturedValue(value, digest, stack) {
+          function createCapturedValue(value, digest2, stack) {
             return {
               value,
               source: null,
               stack: stack != null ? stack : null,
-              digest: digest != null ? digest : null
+              digest: digest2 != null ? digest2 : null
             };
           }
           function showErrorDialog(boundary, errorInfo) {
@@ -16468,10 +16468,10 @@
                 return retrySuspenseComponentWithoutHydrating(current2, workInProgress2, renderLanes2, null);
               }
               if (isSuspenseInstanceFallback(suspenseInstance)) {
-                var digest, message, stack;
+                var digest2, message, stack;
                 {
                   var _getSuspenseInstanceF = getSuspenseInstanceFallbackErrorDetails(suspenseInstance);
-                  digest = _getSuspenseInstanceF.digest;
+                  digest2 = _getSuspenseInstanceF.digest;
                   message = _getSuspenseInstanceF.message;
                   stack = _getSuspenseInstanceF.stack;
                 }
@@ -16481,7 +16481,7 @@
                 } else {
                   error2 = new Error("The server could not finish this Suspense boundary, likely due to an error during server rendering. Switched to client rendering.");
                 }
-                var capturedValue = createCapturedValue(error2, digest, stack);
+                var capturedValue = createCapturedValue(error2, digest2, stack);
                 return retrySuspenseComponentWithoutHydrating(current2, workInProgress2, renderLanes2, capturedValue);
               }
               var hasContextChanged2 = includesSomeLane(renderLanes2, current2.childLanes);
@@ -20480,10 +20480,10 @@
               for (var i = 0; i < recoverableErrors.length; i++) {
                 var recoverableError = recoverableErrors[i];
                 var componentStack = recoverableError.stack;
-                var digest = recoverableError.digest;
+                var digest2 = recoverableError.digest;
                 onRecoverableError(recoverableError.value, {
                   componentStack,
-                  digest
+                  digest: digest2
                 });
               }
             }
@@ -22610,18 +22610,54 @@
   });
 
   // src/index.tsx
-  var import_react2 = __toESM(require_react());
+  var import_react3 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // src/App.tsx
+  var import_react2 = __toESM(require_react());
+
+  // src/components/Button/Button.tsx
   var import_react = __toESM(require_react());
-  var App = ({ foo }) => /* @__PURE__ */ import_react.default.createElement("div", {
-    className: "font"
-  }, "skody: ", foo);
+
+  // esbuild-css-modules-plugin-namespace:/var/folders/v0/7ng4fbh54bq_l3f9r6gf3wx00000gn/T/tmp-74862-56fTrbUlBA3U/library/src/components/Button/Button.module.css.js
+  var digest = "40049270dab215a34f7c7e43ae73b3b3c22379cda6b846067f0c91d7a5ce2304";
+  var css = `._button_apcvj_1 {
+  font-size: 20px;
+  background-color: black;
+  color: aliceblue;
+}
+`;
+  (function() {
+    if (typeof document === "undefined") {
+      return;
+    }
+    if (!document.getElementById(digest)) {
+      var el = document.createElement("style");
+      el.id = digest;
+      el.textContent = css;
+      document.head.appendChild(el);
+    }
+  })();
+  var Button_module_css_default = { "button": "_button_apcvj_1" };
+
+  // src/components/Button/Button.tsx
+  var Button = ({ label }) => {
+    return /* @__PURE__ */ import_react.default.createElement("button", {
+      className: Button_module_css_default.button
+    }, label);
+  };
+  var Button_default = Button;
+
+  // src/App.tsx
+  var App = ({ foo }) => /* @__PURE__ */ import_react2.default.createElement("div", {
+    className: "text-3xl"
+  }, "skody: ", foo, /* @__PURE__ */ import_react2.default.createElement(Button_default, {
+    label: "Button"
+  }));
   var App_default = App;
 
   // src/index.tsx
-  import_react_dom.default.render(/* @__PURE__ */ import_react2.default.createElement(App_default, {
+  import_react_dom.default.render(/* @__PURE__ */ import_react3.default.createElement(App_default, {
     foo: "Whats up bud"
   }), document.getElementById("root"));
 })();
