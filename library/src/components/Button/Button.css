@@ -1,0 +1,6 @@
+.bold {
+  font-weight: bold;
+  background: none;
+  border: 2px solid red;
+  padding: 16px;
+}
