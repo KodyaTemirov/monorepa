@@ -1,7 +1,7 @@
 import './App.css';
 import { Button } from 'library';
 
-const App = () => {
+const Apps = () => {
   return (
     <>
       <p className="text-3xl font-bold underline">kods</p>
@@ -10,4 +10,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Apps;
