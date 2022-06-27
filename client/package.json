@@ -44,7 +44,7 @@
   },
   "lint-staged": {
     "*.(ts|tsx|js|jsx)": [
-      "npm run lint:write",
+      "pnpm run lint:fix",
       "git add"
     ]
   }
