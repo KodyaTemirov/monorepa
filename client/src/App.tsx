@@ -1,7 +1,7 @@
 import './App.css';
 import { Button } from 'library';
 
-function App(): JSX.Element {
+function App() {
   return (
     <>
       <p className="text-3xl font-bold underline">kods</p>
