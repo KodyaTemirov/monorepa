@@ -1,11 +1,11 @@
-import "./App.css";
-import { Button } from "library";
+import './App.css';
+import { Button } from 'library';
 
-function App() {
+function App(): JSX.Element {
   return (
     <>
       <p className="text-3xl font-bold underline">kods</p>
-      <Button label="kodya" />
+      <Button label="Hello" />
     </>
   );
 }
