@@ -1,13 +1,13 @@
-import "./App.css";
-import { Button } from "library";
+import './App.css';
+import { Button } from 'library';
 
-function App() {
+const Apps = () => {
   return (
     <>
       <p className="text-3xl font-bold underline">kods</p>
-      <Button label="kodya" />
+      <Button label="Hello" />
     </>
   );
-}
+};
 
-export default App;
+export default Apps;
