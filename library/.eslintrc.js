@@ -34,6 +34,8 @@ module.exports = {
     'comma-dangle': ['warn', 'always-multiline'],
     semi: ['warn', 'always'],
     'jsx-quotes': ['error', 'prefer-double'],
+    "rules": {
+      "@typescript-eslint/no-var-requires": 0,
     'import/order': [
       'error',
       {
