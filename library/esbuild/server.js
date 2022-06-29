@@ -5,7 +5,7 @@ const postCssPlugin = require("esbuild-plugin-postcss2");
 const autoprefixer = require("autoprefixer");
 const tailwindcss = require("tailwindcss");
 const cssModulesPlugin = require("esbuild-css-modules-plugin");
-const atImport = require("postcss-import");
+const postCssImport = require("postcss-import");
 (async () => {
   // `esbuild` bundler for JavaScript / TypeScript.
   const builder = await build({
@@ -30,8 +30,7 @@ const atImport = require("postcss-import");
       cssModulesPlugin(),
       postCssPlugin.default({
         plugins: [
-          atImport,
-          autoprefixer,
+          autoprefixer(),
           tailwindcss({
             content: ["./src/**/*.{tsx,ts,jsx,js,html}"],
             theme: {

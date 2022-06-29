@@ -1,6 +1,7 @@
-import React from "react";
-import "./App.css";
-import { Button } from "./components";
+import { Button } from './components';
+
+import React from 'react';
+import './App.css';
 
 interface Props {
   foo: string;
